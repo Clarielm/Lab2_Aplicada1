@@ -1,0 +1,61 @@
+﻿@model List<AlmacenPersona.Models.Persona>
+@{
+    ViewBag.Title = "Resultado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>LISTADO DE REGISTROS</h1>
+
+<div class="row" id="tabladePersonas">
+    <div class="container">
+        <table class="table table-hover">
+
+            <thead>
+            <th>
+                PERSONA ID
+            </th>
+            <th>
+                NOMBRE
+            </th>
+            <th>
+                EDAD PERSONA
+            </th>
+            <th>
+                DESCRIPCION
+            </th>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.IdPersona</td>
+                        <td>@item.NombrePersona</td>
+                        <td>@item.EdadPersona</td>
+                        <td>@item.DescripcionPersona</td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+@section Scripts{
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var tablaPer = $('#tabladePersonas').DataTable();
+
+        });
+
+    </script>
+
+}
+

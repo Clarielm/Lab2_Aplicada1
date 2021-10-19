@@ -1,0 +1,41 @@
+﻿@model AlmacenPersona.Models.ViewModels.PersonaViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("IndexSegundo", "Proceso", FormMethod.Post))
+{
+
+
+    <h2>REGISTRO DE PERSONA</h2>
+
+
+
+    @Html.LabelFor(m => m.NombrePersona)
+    <br />
+    @Html.TextBoxFor(m => m.NombrePersona)
+    <br />
+    @Html.ValidationMessageFor(m => m.NombrePersona, null)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.EdadPersona)
+    <br />
+    @Html.TextBoxFor(m => m.EdadPersona)
+    <br />
+    @Html.ValidationMessageFor(m => m.EdadPersona, null)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.DescripcionPersona)
+    <br />
+    @Html.TextBoxFor(m => m.DescripcionPersona)
+    <br />
+    @Html.ValidationMessageFor(m => m.DescripcionPersona, null)
+
+
+    <br />
+    <input type="submit" />
+
+}
+
